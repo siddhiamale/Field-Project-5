@@ -14,130 +14,202 @@
             color: #333;
             line-height: 1.6;
         }
-
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 0;
+            background-color: rgba(45, 106, 79, 0.95);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
-
-        .container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-links a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b7e4c7;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #b7e4c7;
+            transform: translateY(-3px);
+        }
+        .nav-links a.active {
+            color: #b7e4c7;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 800px;
+            margin: 90px auto 0 auto;
             padding: 2rem;
         }
-
         .about-section {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            padding: 3rem;
+            padding: 2rem;
             margin: 2rem auto;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
-
         .section-title {
             color: #2d6a4f;
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
             text-align: center;
         }
-
         .stat-box {
             background: #40916c;
             color: white;
-            padding: 2rem;
+            padding: 1.2rem;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
-
         .stat-box:hover {
             transform: translateY(-5px);
         }
-
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 1.7rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .extra-info {
+            background: #2d6a4f;
+            color: #fff;
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        .team-member {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        .team-member img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.7rem;
+        }
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 1rem 0.3rem;
+            }
+            .about-section {
+                padding: 1rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="about-section">
-            <h1 class="section-title">About FertiShop</h1>
-            
-            <p>Welcome to FertiShop, your trusted partner in agricultural excellence since 2020. We specialize in providing high-quality fertilizers and agricultural solutions to farmers across India.</p>
-
-            <div class="stats-container">
-                <div class="stat-box">
-                    <div class="stat-number">5000+</div>
-                    <div>Happy Customers</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">200+</div>
-                    <div>Products</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">50+</div>
-                    <div>Expert Staff</div>
-                </div>
+<header class="header">
+    <nav class="nav-container">
+        <div class="logo">
+            <i class="fas fa-leaf"></i> FertiShop
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="employee.html">Employees</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="Login.html"><i class="fas fa-user"></i> Login</a>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="about-section">
+        <h1 class="section-title">About FertiShop</h1>
+        <p>FertiShop is dedicated to supporting farmers with quality fertilizers and expert advice. Since 2020, we have helped hundreds of customers grow better crops and improve their yields.</p>
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">350+</div>
+                <div>Happy Customers</div>
             </div>
-
-            <h2 style="color: #2d6a4f; margin-top: 3rem;">Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Team Member">
-                    <h3>John Doe</h3>
-                    <p>Founder & CEO</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Team Member">
-                    <h3>Jane Smith</h3>
-                    <p>Agricultural Expert</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member">
-                    <h3>Mike Johnson</h3>
-                    <p>Quality Control</p>
-                </div>
+            <div class="stat-box">
+                <div class="stat-number">35+</div>
+                <div>Products</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div>Expert Staff</div>
+            </div>
+        
+        </div>
+        <div class="extra-info">
+            <strong>Our Mission:</strong> To empower farmers with sustainable solutions and reliable service.
+        </div>
+        <h2 style="color: #2d6a4f; margin-top: 2rem;">Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Team Member">
+                <h3>John Doe</h3>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Team Member">
+                <h3>Jane Smith</h3>
+                <p>Agricultural Expert</p>
+            </div>
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Team Member">
+                <h3>Mike Johnson</h3>
+                <p>Quality Control</p>
             </div>
         </div>
-    </div>
-</body>
-</html>

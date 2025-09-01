@@ -3,214 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Staff - FertiShop</title>
+    <title>Our Employees - Fertilizer Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f0f0f0;
+            background: linear-gradient(135deg, #1b4332 0%, #40916c 50%, #95d5b2 100%);
+            min-height: 100vh;
         }
 
-        .staff-container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            padding: 2.5rem 2rem;
         }
 
-        .page-title {
+        .title {
             text-align: center;
             color: #2d6a4f;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
         }
 
-        .staff-list {
+        .employee-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
-        .staff-item {
-            background: white;
-            margin-bottom: 20px;
-            padding: 20px;
+        .employee-item {
+            background: #f8f9fa;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1.2rem;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 2px 8px rgba(64,145,108,0.07);
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            gap: 0.4rem;
         }
 
-        .staff-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px;
-            object-fit: cover;
-        }
-
-        .staff-info h3 {
+        .employee-name {
+            font-size: 1.15rem;
             color: #2d6a4f;
-            margin: 0 0 5px 0;
+            font-weight: 600;
         }
 
-        .staff-position {
+        .employee-position {
             color: #40916c;
+            font-size: 1rem;
             font-weight: 500;
-            margin-bottom: 10px;
         }
 
-        .staff-contact {
-            color: #666;
-            font-size: 14px;
+        .employee-contact {
+            color: #555;
+            font-size: 0.95rem;
         }
 
-        .staff-contact i {
-            margin-right: 5px;
+        .employee-contact i {
             color: #40916c;
-        }
-    </style>
-</head>
-<body>
-    <div class
-
-        .employee-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1rem 0;
+            margin-right: 6px;
         }
 
-        .stat {
-            background: #e9f5db;
-            padding: 1rem;
-            border-radius: 8px;
-        }
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 1.2rem 0.5rem;
+            }
 
-        .stat-number {
-            font-size: 1.5rem;
-            color: #2d6a4f;
-            font-weight: bold;
+            .title {
+                font-size: 1.3rem;
+            }
         }
-
-        .social-links {
+          .header {
+            background-color: rgba(45, 106, 79, 0.95);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #40916c;
-            color: white;
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+        }
+         .nav-links a {
+            color: white;
             text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        .social-links a:hover {
-            background: #2d6a4f;
+        .nav-links a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b7e4c7;
+            transition: width 0.3s ease;
+        }
+                .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-links a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #b7e4c7;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #b7e4c7;
             transform: translateY(-3px);
         }
-
-        .section-title {
-            color: white;
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        .nav-links a.active {
+            color: #b7e4c7;
+            font-weight: 600;
         }
+
+    </style>
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="section-title">Our Team Members</h1>
-        <div class="employee-grid">
-            <!-- Employee Card 1 -->
-            <div class="employee-card">
-                <div class="employee-header">
-                    <div class="employee-img" style="background-image: url('https://randomuser.me/api/portraits/men/1.jpg')"></div>
-                    <h2 class="employee-name">John Doe</h2>
-                    <p class="employee-position">Sales Manager</p>
-                </div>
-                <div class="employee-details">
-                    <div class="employee-stats">
-                        <div class="stat">
-                            <div class="stat-number">5+</div>
-                            <div>Years</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">150+</div>
-                            <div>Sales</div>
-                        </div>
-                    </div>
-                    <p>Expert in agricultural products with extensive field experience.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employee Card 2 -->
-            <div class="employee-card">
-                <div class="employee-header">
-                    <div class="employee-img" style="background-image: url('https://randomuser.me/api/portraits/women/1.jpg')"></div>
-                    <h2 class="employee-name">Jane Smith</h2>
-                    <p class="employee-position">Agricultural Expert</p>
-                </div>
-                <div class="employee-details">
-                    <div class="employee-stats">
-                        <div class="stat">
-                            <div class="stat-number">8+</div>
-                            <div>Years</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">200+</div>
-                            <div>Clients</div>
-                        </div>
-                    </div>
-                    <p>Specialized in soil analysis and fertilizer recommendations.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Employee Card 3 -->
-            <div class="employee-card">
-                <div class="employee-header">
-                    <div class="employee-img" style="background-image: url('https://randomuser.me/api/portraits/men/2.jpg')"></div>
-                    <h2 class="employee-name">Mike Johnson</h2>
-                    <p class="employee-position">Inventory Manager</p>
-                </div>
-                <div class="employee-details">
-                    <div class="employee-stats">
-                        <div class="stat">
-                            <div class="stat-number">4+</div>
-                            <div>Years</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">500+</div>
-                            <div>Products</div>
-                        </div>
-                    </div>
-                    <p>Managing stock and supplier relationships efficiently.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
+    <body>
+<header class="header">
+    <nav class="nav-container">
+        <div class="logo">
+            <i class="fas fa-leaf"></i> FertiShop
         </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="employee.html" class="active">Employees</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="Login.html"><i class="fas fa-user"></i> Login</a>
+        </div>
+    </nav>
+</header>
+<!-- ...rest of your employee page code... -->
+    <div class="container">
+        <div class="title"><i class="fas fa-users"></i> Our Employees</div>
+        <ul class="employee-list">
+            <li class="employee-item">
+                <span class="employee-name">John Doe</span>
+                <span class="employee-position">Sales Manager</span>
+                <span class="employee-contact"><i class="fas fa-phone"></i> +91 9876543210</span>
+            </li>
+            <li class="employee-item">
+                <span class="employee-name">Jane Smith</span>
+                <span class="employee-position">Agricultural Expert</span>
+                <span class="employee-contact"><i class="fas fa-phone"></i> +91 9123456780</span>
+            </li>
+            <li class="employee-item">
+                <span class="employee-name">Mike Johnson</span>
+                <span class="employee-position">Inventory Manager</span>
+                <span class="employee-contact"><i class="fas fa-phone"></i> +91 9988776655</span>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
