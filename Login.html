@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fertilizer Shop Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1b4332 0%, #40916c 50%, #95d5b2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            backdrop-filter: blur(10px);
+            max-width: 450px;  /* Increased from 400px */
+            width: 95%;
+            margin-right: 0;   /* Removed margin-right */
+            margin: 0 auto;    /* Center the container */
+            min-height: 600px; /* Added min-height for more square appearance */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: translateY(-20px);
+            animation: slideIn 0.8s ease-out forwards;
+            box-sizing: border-box;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;  /* Increased spacing */
+        }
+
+        .login-header i {
+            background: linear-gradient(45deg, #2d6a4f, #40916c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+        }
+
+        .login-container h2 {
+            font-size: 1.5rem;
+            margin: 0.3rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem; /* Increased spacing between form groups */
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #40916c;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem 2.5rem; /* Increased padding for taller input fields */
+            border: 2px solid #b7e4c7;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #40916c;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.1);
+        }
+
+        .login-btn {
+            margin-top: 0.5rem;
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #2d6a4f, #40916c);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(45deg, #40916c, #2d6a4f);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin: -0.5rem 0 1.5rem;
+        }
+
+        .forgot-password a {
+            color: #40916c;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password a:hover {
+            color: #2d6a4f;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 480px) {
+            .login-container {
+                min-height: auto;  /* Remove fixed height on mobile */
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .form-group input {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Optional: Add subtle pattern overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zM32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544V0h.284zM0 5.373l25.456 25.455-1.414 1.415L0 8.2V5.374zm0 5.656l22.627 22.627-1.414 1.414L0 13.86v-2.83zm0 5.656l19.8 19.8-1.415 1.413L0 19.514v-2.83zm0 5.657l16.97 16.97-1.414 1.415L0 25.172v-2.83zM0 28l14.142 14.142-1.414 1.414L0 30.828V28zm0 5.657L11.314 44.97 9.9 46.386l-9.9-9.9v-2.828zm0 5.657L8.485 47.9l-1.414 1.414-7.071-7.071V53.27zM0 42.627l5.657 5.657-1.414 1.414L0 44.041v-1.414zm0 5.656l3.536 3.536-1.414 1.414L0 50.697v-2.83zm0 5.656l1.414 1.414L0 54.627V53.27z' fill='%236c757d' fill-opacity='.2'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fas fa-leaf"></i>
+            <h2>Welcome Back</h2>
+            <p>Login to access your account</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" name="username" required autocomplete="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Enter your phone number" autocomplete="tel">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Enter your password">
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-btn">Sign In</button>
+        </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="#" style="color: #40916c; text-decoration: none;">Sign Up</a></p>
+            <p>&copy; 2025 Fertilizer Shop Management System</p>
+        </div>
+    </div>
+</body>
+</html>
