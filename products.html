@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Fertilizer Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#fdf6ed] min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-[#225d44] shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center px-4 py-3 gap-4">
+            <div class="flex items-center gap-2 text-white font-bold text-xl">
+                <i class="fas fa-leaf"></i>
+                <span>FertiShop</span>
+            </div>
+            <a href="index.html" class="text-white px-4 py-2 rounded-full hover:bg-[#b7e4c7] hover:text-[#225d44] transition">Home</a>
+            <a href="products.html" class="text-white px-4 py-2 rounded-full bg-[#b7e4c7] text-[#225d44] font-semibold">Products</a>
+            <a href="contact.html" class="text-white px-4 py-2 rounded-full hover:bg-[#b7e4c7] hover:text-[#225d44] transition">Contact</a>
+            <form id="navbar-search-form" class="flex-1 flex justify-center">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search products..." 
+                    class="w-full max-w-xs px-4 py-2 rounded-full border border-[#b7e4c7] focus:outline-none focus:ring-2 focus:ring-[#40916c] text-[#225d44] bg-white shadow transition"
+                >
+            </form>
+            <a href="cart.html" class="relative ml-4 flex items-center text-white font-semibold hover:text-[#ffd600] transition">
+                <i class="fas fa-shopping-cart text-2xl"></i>
+                <span id="cart-badge" class="absolute -top-2 -right-2 bg-[#ffd600] text-[#225d44] text-xs font-bold rounded-full px-2 py-0.5 hidden">0</span>
+                <span class="ml-2 hidden sm:inline">Cart</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Filter Bar -->
+    <section class="max-w-7xl mx-auto w-full px-4 mt-6 flex flex-col sm:flex-row items-center gap-4">
+        <div class="flex gap-3 w-full sm:w-auto">
+            <select id="categoryFilter" class="px-4 py-2 rounded-full border border-[#b7e4c7] bg-white text-[#225d44] focus:outline-none focus:ring-2 focus:ring-[#40916c]">
+                <option value="">All Categories</option>
+                <option value="Fungicide">Fungicide</option>
+                <option value="Insecticides">Insecticides</option>
+                <option value="Nutrients">Nutrients</option>
+                <option value="Seeds">Seeds</option>
+                <option value="Fertilizer">Fertilizer</option>
+            </select>
+            <select id="priceFilter" class="px-4 py-2 rounded-full border border-[#b7e4c7] bg-white text-[#225d44] focus:outline-none focus:ring-2 focus:ring-[#40916c]">
+                <option value="">Sort by Price</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 py-8">
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product Card Example -->
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Fungicide" data-price="500">
+                <img src="Fungicide.webp" alt="Fungicide" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">Fungicide</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Protects crops from fungal diseases for healthy growth.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹500 / 1L</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="Fungicide"
+                    data-desc="Protects crops from fungal diseases for healthy growth."
+                    data-price="₹500 / 1L"
+                    data-more="Fungicides are chemical compounds or biological organisms used to kill or inhibit fungi or fungal spores. They are essential for protecting crops from diseases and ensuring healthy yields."
+                    data-img="Fungicide.webp"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Insecticides" data-price="450">
+                <img src="insectiside.jpg" alt="Insecticides" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">Insecticides</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Effective against a wide range of crop-damaging insects.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹450 / 1L</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="Insecticides"
+                    data-desc="Effective against a wide range of crop-damaging insects."
+                    data-price="₹450 / 1L"
+                    data-more="Insecticides help control and eliminate insects that can damage crops. They are vital for maintaining crop health and maximizing productivity."
+                    data-img="Insecticides.webp"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Nutrients" data-price="350">
+                <img src="Nutrients.webp" alt="Nutrients" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">Nutrients</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Essential nutrients for robust plant growth and yield.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹350 / 1kg</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="Nutrients"
+                    data-desc="Essential nutrients for robust plant growth and yield."
+                    data-price="₹350 / 1kg"
+                    data-more="Plant nutrients are vital for healthy growth and high yields. They include macro and micro nutrients that support all stages of plant development."
+                    data-img="Nutrients.webp"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Seeds" data-price="200">
+                <img src="Seeds.avif" alt="Seeds" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">Seeds</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">High-quality seeds for better germination and productivity.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹200 / pack</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="Seeds"
+                    data-desc="High-quality seeds for better germination and productivity."
+                    data-price="₹200 / pack"
+                    data-more="Our seeds are carefully selected for high germination rates and robust crop performance, ensuring better productivity for your farm."
+                    data-img="Seeds.avif"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Fertilizer" data-price="800">
+                <img src="potash.avif" alt="Potash Fertilizer" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">Potash Fertilizer</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Improves water retention, yield, and disease resistance.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹800 / 50kg</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="Potash Fertilizer"
+                    data-desc="Improves water retention, yield, and disease resistance."
+                    data-price="₹800 / 50kg"
+                    data-more="Potash fertilizer is rich in potassium, which helps plants resist disease, improve water retention, and increase crop yields."
+                    data-img="potash.avif"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Fertilizer" data-price="600">
+                <img src="organic1.avif" alt="Organic Fertilizer" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">Organic Fertilizer</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Eco-friendly, enhances soil health and fertility.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹600 / 50kg</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="Organic Fertilizer"
+                    data-desc="Eco-friendly, enhances soil health and fertility."
+                    data-price="₹600 / 50kg"
+                    data-more="Organic fertilizers are made from natural materials and improve soil structure, fertility, and microbial activity for sustainable farming."
+                    data-img="organic.avif"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Fertilizer" data-price="950">
+                <img src="npk.avif" alt="NPK Fertilizer" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">NPK Fertilizer</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Balanced nutrients for all crop stages.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹950 / 50kg</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="NPK Fertilizer"
+                    data-desc="Balanced nutrients for all crop stages."
+                    data-price="₹950 / 50kg"
+                    data-more="NPK fertilizers provide a balanced mix of nitrogen, phosphorus, and potassium, essential for healthy plant growth at all stages."
+                    data-img="npk.avif"
+                >Buy Now</button>
+            </div>
+            <div class="product-card bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center transition hover:shadow-2xl group" data-category="Fertilizer" data-price="1200">
+                <img src="dap.avif" alt="DAP Fertilizer" class="product-image w-40 h-40 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+                <div class="product-title text-lg font-bold text-[#18451a] mb-2">DAP Fertilizer</div>
+                <div class="product-desc text-[#40916c] mb-2 text-center">Rich in phosphorus for healthy root development.</div>
+                <div class="product-price text-[#388e3c] font-bold mb-4">₹1,200 / 50kg</div>
+                <button class="buy-btn bg-[#40916c] text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-[#286a2b] transition active:scale-95"
+                    data-title="DAP Fertilizer"
+                    data-desc="Rich in phosphorus for healthy root development."
+                    data-price="₹1,200 / 50kg"
+                    data-more="DAP fertilizer is a source of phosphorus and nitrogen, promoting strong root development and vigorous early plant growth."
+                    data-img="dap.avif"
+                >Buy Now</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for product details -->
+    <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] hidden">
+        <div class="modal-content bg-white rounded-2xl max-w-md w-[90vw] p-8 text-center relative shadow-2xl animate-[popIn_0.2s]">
+            <button class="close-btn absolute top-3 right-4 text-2xl text-[#40916c] hover:text-[#18451a]" onclick="closeModal()">&times;</button>
+            <img id="modalImg" src="" alt="" class="mx-auto w-32 h-32 object-contain rounded-xl mb-4 bg-[#f0f0f0]">
+            <div class="modal-title text-xl font-bold text-[#18451a] mb-2" id="modalTitle"></div>
+            <div class="modal-desc text-[#40916c] mb-2" id="modalDesc"></div>
+            <div class="modal-price text-[#388e3c] font-bold mb-2" id="modalPrice"></div>
+            <div class="modal-more text-[#18451a] mb-2" id="modalMore"></div>
+        </div>
+    </div>
+
+    <footer class="bg-[#1b4332] text-[#b8c5bc] text-center py-5 mt-8 text-base">
+        <div>
+            &copy; 2025 FertiShop &mdash; All Rights Reserved.
+        </div>
+        <div class="mt-1">
+            <i class="fas fa-leaf"></i> FertiShop &nbsp;|&nbsp; 
+            <a href="contact.html" class="text-[#b7e4c7] underline">Contact Us</a>
+        </div>
+    </footer>
+    <script>
+        // Search filter
+        const searchInput = document.getElementById('searchInput');
+        const productGrid = document.getElementById('productGrid');
+        const cards = Array.from(productGrid.getElementsByClassName('product-card'));
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                const desc = card.querySelector('.product-desc').textContent.toLowerCase();
+                if (title.includes(query) || desc.includes(query)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+
+        // Filter dropdowns
+        document.getElementById('categoryFilter').addEventListener('change', function() {
+            const val = this.value;
+            cards.forEach(card => {
+                if (!val || card.dataset.category === val || (val === "Fertilizer" && ["Potash Fertilizer","Organic Fertilizer","NPK Fertilizer","DAP Fertilizer"].includes(card.querySelector('.product-title').textContent))) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+
+        document.getElementById('priceFilter').addEventListener('change', function() {
+            const val = this.value;
+            let sorted = [...cards];
+            if (val === "low") {
+                sorted.sort((a, b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
+            } else if (val === "high") {
+                sorted.sort((a, b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
+            }
+            sorted.forEach(card => productGrid.appendChild(card));
+        });
+
+        // Modal logic for Buy Now button only
+        const modal = document.getElementById('productModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalMore = document.getElementById('modalMore');
+
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                modal.classList.remove('hidden');
+                modalImg.src = this.dataset.img;
+                modalImg.alt = this.dataset.title;
+                modalTitle.textContent = this.dataset.title;
+                modalDesc.textContent = this.dataset.desc;
+                modalPrice.textContent = this.dataset.price;
+                modalMore.textContent = this.dataset.more;
+            });
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closeModal();
+        });
+
+        // Cart badge demo (add to cart logic can be expanded)
+        let cartCount = 0;
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                cartCount++;
+                const badge = document.getElementById('cart-badge');
+                badge.textContent = cartCount;
+                badge.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

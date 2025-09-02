@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart | Fertilizer Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#fdf6ed] text-[#18451a]">
+
+  <!-- Navbar (reuse from products.html if needed) -->
+  <nav class="bg-[#225d44] shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center px-4 py-3 gap-4">
+      <div class="flex items-center gap-2 text-white font-bold text-xl">
+        <i class="fas fa-leaf"></i>
+        <span>FertiShop</span>
+      </div>
+      <a href="index.html" class="text-white px-4 py-2 rounded-full hover:bg-[#b7e4c7] hover:text-[#225d44] transition">Home</a>
+      <a href="products.html" class="text-white px-4 py-2 rounded-full hover:bg-[#b7e4c7] hover:text-[#225d44] transition">Products</a>
+      <a href="contact.html" class="text-white px-4 py-2 rounded-full hover:bg-[#b7e4c7] hover:text-[#225d44] transition">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Cart Page -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-[#18451a]">Your Shopping Cart</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Left: Cart Items -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Cart Item -->
+        <div class="flex flex-col sm:flex-row items-center bg-white p-4 rounded-xl shadow-md gap-4">
+          <img src="Fungicide.webp" alt="Fungicide" class="w-24 h-24 object-contain bg-[#f0f0f0] rounded-lg">
+          
+          <div class="flex-1 space-y-1 text-center sm:text-left">
+            <h2 class="text-lg font-semibold">Fungicide</h2>
+            <p class="text-[#388e3c] font-semibold">₹500</p>
+          </div>
+
+          <!-- Quantity Control -->
+          <div class="flex items-center gap-2">
+            <button class="bg-[#40916c] text-white w-8 h-8 rounded-full text-lg hover:bg-[#286a2b]">-</button>
+            <span class="w-8 text-center font-semibold">1</span>
+            <button class="bg-[#40916c] text-white w-8 h-8 rounded-full text-lg hover:bg-[#286a2b]">+</button>
+          </div>
+
+          <!-- Subtotal -->
+          <div class="font-semibold hidden sm:block">₹500</div>
+
+          <!-- Remove -->
+          <button class="text-red-600 hover:text-red-800">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+
+        <!-- Repeat cart item as needed -->
+
+      </div>
+
+      <!-- Right: Cart Summary -->
+      <div class="bg-white rounded-xl p-6 shadow-md h-fit">
+        <h2 class="text-xl font-bold mb-4">Cart Summary</h2>
+        <div class="flex justify-between mb-2">
+          <span>Total Items:</span>
+          <span class="font-semibold">1</span>
+        </div>
+        <div class="flex justify-between mb-4">
+          <span>Total Price:</span>
+          <span class="font-semibold">₹500</span>
+        </div>
+        <button class="w-full bg-[#2d6a4f] text-white py-3 rounded-full text-lg font-bold transition hover:bg-[#1b4332] active:scale-95">
+          Proceed to Checkout
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-[#1b4332] text-[#b8c5bc] text-center py-5 mt-8 text-base">
+    <div>&copy; 2025 FertiShop &mdash; All Rights Reserved.</div>
+    <div class="mt-1">
+      <i class="fas fa-leaf"></i> FertiShop &nbsp;|&nbsp;
+      <a href="contact.html" class="text-[#b7e4c7] underline">Contact Us</a>
+    </div>
+  </footer>
+
+</body>
+</html>
